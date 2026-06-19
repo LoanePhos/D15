@@ -1,0 +1,123 @@
+/* ============================================================
+                            BODY
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+/* ============================================================
+                            FONTS
+============================================================ */
+
+/* ============================================================
+                            BODY
+============================================================ */
+
+p, h3, h4 {
+  color: #ffffff;
+}
+
+/* ============================================================
+                            GRILLE
+============================================================ */
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  width: 100%;
+}
+
+.grille a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+  text-decoration: none;
+  padding: 4rem;
+  height: 50vh;
+  width: 50vw;
+}
+
+
+/* ============================================================
+                            POP-UP
+============================================================ */
+.popup-box {
+  display: none;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px 10px #ffffff;
+  padding: clamp(0.75rem, 1.4vw, 1rem);
+  overflow-y: auto;
+  position: fixed;
+  z-index: 500;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.popup-box.is-open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.popup-mobilier {
+  width: 50vw;
+  height: 50vh;
+  top: 25vh;
+  left: 25vw;
+}
+
+.popup-ludd {
+  width: clamp(200px, 24vw, 550px);
+  height: clamp(300px, 66vh, 700px);
+  top: clamp(20%, 2%, 26%);
+  left: clamp(20%, 4%, 26%);
+  aspect-ratio: 24/66;
+}
+
+.popup-prism {
+  width: clamp(200px, 24vw, 550px);
+  height: clamp(300px, 66vh, 700px);
+  top: clamp(18%, 2%, 20%);
+  left: clamp(18%, 4%, 20%);
+  aspect-ratio: 24/66;
+}
+
+.popup-mouche {
+  width: clamp(200px, 24vw, 550px);
+  height: clamp(300px, 66vh, 700px);
+  top: clamp(4%, 2%, 4%);
+  right: clamp(2%, 4%, 6%);
+  aspect-ratio: 24/66;
+}
+
+.popup-box p {
+  font-size: clamp(11px, 1vw, 16px);
+  color: #ffffff;
+  -webkit-text-stroke: 6px #95D8EF;
+  paint-order: stroke fill;
+  line-height: 1;
+  padding: 2vh;
+}
+
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-family: 'BianzhidaiPearl', sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(10px, 1.8vw, 16px);
+}
+
