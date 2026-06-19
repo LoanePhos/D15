@@ -1,0 +1,157 @@
+/* appeller les fonts */
+@font-face {
+  font-family: 'BBB-Herthey-Futural-95';
+  src: url('../fonts/BBB-Herthey-Futural-95.woff') format('woff');
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'BBB-Herthey-Futural--15';
+  src: url('../fonts/BBB-Herthey-Futural--15.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'paragraphe';
+  src: url('../fonts/Latitude-Regular.woff') format('woff');
+  font-style: normal;
+}
+
+
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général */
+body {
+    font-family: 'BBB-Herthey-Futural-95', sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+
+/* le contaner */
+.container {
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0 auto 12px;
+}
+
+
+/* Menu */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 750px; 
+    padding: 20px;
+    background-color: #000;
+}
+
+.menu a {
+    color: #ffffff;
+    font-family: 'BBB-Herthey-Futural-95', sans-serif ;
+    transition: 0.3s;
+    text-decoration: none ;
+    font-size: 24px;
+}
+
+/* Logo */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 160px;
+}
+
+header img {
+    max-width: 500px;
+    height: auto;
+}
+
+/* Colonnes */
+
+.colonne1 {
+    text-align: left;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.colonne2 {
+    text-align: left;
+    width: fit-content;
+    margin: 0 auto;
+
+}
+
+/* Titres */
+h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+h3 {
+
+    font-size: 24px;
+    font-family: 'BBB-Herthey-Futural--15', sans-serif;
+    white-space: pre-line;
+    word-break: break-word;
+}
+
+/* Paragraphes */
+p {
+    margin-bottom: 15px;
+    font-family: 'paragraphe', sans-serif;
+    font-size: 24px;
+}
+
+p1 a {
+    font-family: 'BBB-Herthey-Futural-95', sans-serif ;
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+
+}
+
+/* Footer */
+.pleine-largeur {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .deux-colonnes {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px;
+}
+
+/* Chaque colonne prend 50% */
+.colonne {
+    width: 50%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
