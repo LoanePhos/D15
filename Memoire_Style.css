@@ -17,13 +17,64 @@ html, body {
                             FONTS
 ============================================================ */
 
+@font-face {
+  font-family: 'FuturalHeavy';
+  src: url('fonts/BBB-Herthey-Futural-95.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturalRegular';
+  src: url('fonts/BBB-Herthey-Futural-40.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturalThin';
+  src: url('fonts/BBB-Herthey-Futural-15.woff') format('woff');
+  font-weight: thin;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Baskervvol';
+  src: url('fonts/BBBBaskervvol-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BaskervvolItalic';
+  src: url('fonts/BBBBaskervvol-MediumItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
 /* ============================================================
                             BODY
 ============================================================ */
 
-p, h3, h4 {
+h2 {
+  font-family: 'FuturalHeavy';
   color: #ffffff;
+  font-size: clamp(42px, 10vh, 52px);
 }
+
+h3 {
+  font-family: 'BaskervvolItalic'; 
+  color: #ffffff;
+  font-size: clamp(12px, 2vh, 18px);
+}
+
+p {
+  font-family: 'Baskervvol';
+  color: #ffffff;
+  font-size: clamp(12px, 2vh, 18px);
+}
+
+
 
 /* ============================================================
                             GRILLE
@@ -48,10 +99,10 @@ p, h3, h4 {
   width: 50vw;
 }
 
-
 /* ============================================================
                             POP-UP
 ============================================================ */
+
 .popup-box {
   display: none;
   background: #ffffff;
@@ -71,36 +122,16 @@ p, h3, h4 {
   justify-content: center;
 }
 
-.popup-mobilier {
+.popup-mobilier,
+.popup-ludd,
+.popup-prism,
+.popup-mouche {
   width: 50vw;
   height: 50vh;
   top: 25vh;
   left: 25vw;
 }
 
-.popup-ludd {
-  width: clamp(200px, 24vw, 550px);
-  height: clamp(300px, 66vh, 700px);
-  top: clamp(20%, 2%, 26%);
-  left: clamp(20%, 4%, 26%);
-  aspect-ratio: 24/66;
-}
-
-.popup-prism {
-  width: clamp(200px, 24vw, 550px);
-  height: clamp(300px, 66vh, 700px);
-  top: clamp(18%, 2%, 20%);
-  left: clamp(18%, 4%, 20%);
-  aspect-ratio: 24/66;
-}
-
-.popup-mouche {
-  width: clamp(200px, 24vw, 550px);
-  height: clamp(300px, 66vh, 700px);
-  top: clamp(4%, 2%, 4%);
-  right: clamp(2%, 4%, 6%);
-  aspect-ratio: 24/66;
-}
 
 .popup-box p {
   font-size: clamp(11px, 1vw, 16px);
