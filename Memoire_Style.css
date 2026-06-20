@@ -40,14 +40,14 @@ html, body {
 
 @font-face {
   font-family: 'Baskervvol';
-  src: url('fonts/BBBBaskervvol-Medium.woff') format('woff');
+  src: url('fonts/BBBBaskervvol-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'BaskervvolItalic';
-  src: url('fonts/BBBBaskervvol-MediumItalic.woff') format('woff');
+  src: url('fonts/BBBBaskervvol-Italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }

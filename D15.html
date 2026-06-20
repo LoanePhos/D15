@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSAA DCN — Promotions</title>
+  <link rel="stylesheet" href="D15_Style.css">
+</head>
+
+<!-------------------------------------------------------------
+                          NAV BAR
+-------------------------------------------------------------->
+<body>
+
+  <div class="container">
+    <nav class="menu">
+      <a href="memoires.html">Mémoires</a>
+      <a href="D15.html">D15</a>
+      <a href="digital.html">Digital.es</a>
+    </nav>
+
+    <!-------------------------------------------------------------
+                                LISTE
+    -------------------------------------------------------------->
+
+    <section class="liste-excel">
+      <h2>Promotions</h2>
+      <ul id="liste-eleves"></ul>
+    </section>
+
+  </div>
+
+  <!-------------------------------------------------------------
+                      SCRIPT LECTURE EXCEL
+  -------------------------------------------------------------->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <script>
+    const FICHIER_EXCEL = "Liste_eleves.xlsx";
+    const FEUILLE = 0;
+    const ID_LISTE = "liste-eleves";
+
+    fetch(FICHIER_EXCEL)
+      .then(reponse => reponse.arrayBuffer())
+      .then(buffer => {
+        const classeur = XLSX.read(buffer, { type: "array" });
+        const feuille = classeur.Sheets[classeur.SheetNames[FEUILLE]];
+        const lignes = XLSX.utils.sheet_to_json(feuille, { header: 1 });
+        const donnees = lignes.slice(1);
+
+        afficherListe(donnees);
+      })
+      .catch(erreur => {
+        console.error("Erreur de lecture du fichier Excel :", erreur);
+      });
+
+    function afficherListe(donnees) {
+      const liste = document.getElementById(ID_LISTE);
+      if (!liste) return;
+
+      donnees.forEach(ligne => {
+        const nom = ligne[0];
+        const annee = ligne[1];
+
+        if (!nom) return;
+
+        const item = document.createElement("li");
+        item.innerHTML = `
+          <span class="nom">${nom}</span>
+          <span class="annee">Promotion ${annee ?? ""}</span>
+        `;
+        liste.appendChild(item);
+      });
+    }
+  </script>
+
+</body>
+
+</html>

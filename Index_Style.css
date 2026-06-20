@@ -1,0 +1,201 @@
+/* ============================================================
+                            RESET
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: black;
+  width: 100%;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ============================================================
+                            FONTS
+============================================================ */
+
+@font-face {
+  font-family: 'FuturalHeavy';
+  src: url('fonts/BBB-Herthey-Futural-95.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturalRegular';
+  src: url('fonts/BBB-Herthey-Futural-40.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturalThin';
+  src: url('fonts/BBB-Herthey-Futural-15.woff') format('woff');
+  font-weight: thin;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Baskervvol';
+  src: url('fonts/BBBBaskervvol-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BaskervvolItalic';
+  src: url('fonts/BBBBaskervvol-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* ============================================================
+                          BODY
+============================================================ */
+
+h1 {
+  font-family: 'FuturalHeavy';
+  color: #ffffff;
+  font-size: clamp(28px, 8vw, 42px);
+  line-height: 1.05;
+}
+
+h2 {
+  font-family: 'FuturalHeavy';
+  color: #ffffff;
+  font-size: clamp(18px, 4.5vw, 24px);
+  line-height: 1.15;
+}
+
+h3 {
+  font-family: 'FuturalThin';
+  font-weight: normal;
+  color: #ffffff;
+  font-size: clamp(10px, 2.2vw, 13px);
+  line-height: 1.9;
+}
+
+p {
+  font-family: 'Baskervvol';
+  color: #d6d6d6;
+  font-size: clamp(11px, 2.6vw, 14px);
+  line-height: 1.45;
+}
+
+/* ============================================================
+                            NAV BAR
+============================================================ */
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.menu a {
+  font-family: 'FuturalHeavy';
+  color: #ffffff;
+  font-size: clamp(11px, 2.8vw, 13px);
+}
+
+/* ============================================================
+                            HEADER
+============================================================ */
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px 50px;
+}
+
+header img {
+  width: 45%;
+  max-width: 180px;
+  height: auto;
+}
+
+/* ============================================================
+                            COLONNE 1
+============================================================ */
+
+.colonne1 {
+  padding: 0 20px;
+  width: 50vw;
+}
+
+.colonne1 h1 {
+  margin-bottom: 18px;
+}
+
+.colonne1 p {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.colonne1 .liens {
+  font-family: 'FuturalHeavy';
+  font-size: clamp(11px, 2.6vw, 13px);
+  line-height: 1.7;
+}
+
+.colonne1 .liens a {
+  text-decoration: underline;
+}
+
+.colonne1 img {
+  display: inline-block;
+  width: 50px;
+  height: auto;
+  margin: 16px 12px 16px 0;
+  vertical-align: middle;
+}
+
+.colonne1 .logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.colonne1 .logos img {
+  height: 22px;
+  width: auto;
+}
+
+/* ============================================================
+                            COLONNE 2
+============================================================ */
+
+.colonne2 {
+  width: 50vw;
+  margin-left: 50%;
+  padding: 60px 20px 40px 0;
+}
+
+.colonne2 h2 {
+  margin-bottom: 14px;
+}
+
+/* ============================================================
+                            FOOTER
+============================================================ */
+
+.pleine-largeur {
+  padding: 30px 20px;
+}
+
+.pleine-largeur p {
+  font-family: 'FuturalHeavy';
+  color: #ffffff;
+  font-size: clamp(11px, 2.8vw, 13px);
+}
