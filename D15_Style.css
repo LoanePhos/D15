@@ -80,6 +80,14 @@ a {
                        LISTE EXCEL
 ============================================================ */
 
+h2 {
+  padding: 4vh;
+  font-family: 'FuturalHeavy';
+  color: #ffffff;
+  font-size: clamp(42px, 10vh, 52px);
+  text-align: center;
+}
+
 .liste-excel ul {
   list-style: none;
   border-top: 1px solid #ffffff;
