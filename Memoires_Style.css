@@ -236,10 +236,12 @@ p {
   flex: 1;
   min-height: 0;
 }
- 
+
 .popup-image {
   position: relative;
-  flex: 1 1 0;
+  flex: 0 0 auto;
+  height: 100%;
+  aspect-ratio: 5 / 7; 
   overflow: hidden;
   display: block;
   text-decoration: none;
