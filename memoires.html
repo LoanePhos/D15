@@ -4,114 +4,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mémoires 2026</title>
+  <title>Mémoires</title>
   <link rel="icon" type="image/x-icon" href="">
-  <link rel="stylesheet" href="Memoire_Style.css">
+  <link rel="stylesheet" href="Memoires_Style.css">
 </head>
 
 <!-------------------------------------------------------------
-                          GRILLE         
+                          NAV BAR
 -------------------------------------------------------------->
-<main>
+<body>
 
-  <div class="grille">
-
-    <a href="#" data-text="MobiLier" data-popup="popup-mobilier">
-      <h3>Collection</h3>
-      <h2>Espaces à composer</h2>
-      <h3>Par le collectif <strong>MobiLier</strong></h3>
-      <br>
-      <p>Blablabla oehfoezifùoeh efouezfhOZ IEZIHFOZE FIZohef ezoefhi zoef oezf zoefh ezof ozef ozoeijfozefozhuqfgqmejfs.</p>
-    </a>
-
-    <a href="#" data-text="Ludd" data-popup="popup-ludd">
-      <h3>Collection</h3>
-      <h2>Pentalobe</h2>
-      <h3>Par le collectif <strong>Ludd</strong></h3>
-      <br>
-      <p>Blablabla oehfoezifùoeh efouezfhOZ IEZIHFOZE FIZohef ezoefhi zoef oezf zoefh ezof ozef ozoeijfozefozhuqfgqmejfs.</p>
-    </a>
-
-    <a href="#" data-text="Prism" data-popup="popup-prism">
-      <h3>Collection</h3>
-      <h2>En-Quêtes</h2>
-      <h3>Par le collectif ><strong>Prism</strong></h3>
-      <br>
-      <p>Blablabla oehfoezifùoeh efouezfhOZ IEZIHFOZE FIZohef ezoefhi zoef oezf zoefh ezof ozef ozoeijfozefozhuqfgqmejfs.</p>
-    </a>
-
-    <a href="#" data-text="Mouche" data-popup="popup-mouche">
-      <h3>Collection</h3>
-      <h2>Long Cuts</h2>
-      <h3>Par le collectif <strong>Mouche</strong></h3>
-      <br>
-      <p>Blablabla oehfoezifùoeh efouezfhOZ IEZIHFOZE FIZohef ezoefhi zoef oezf zoefh ezof ozef ozoeijfozefozhuqfgqmejfs.</p>
-    </a>
-
-  </div>
-
-</main>
+  <div class="container">
+    <nav class="menu">
+      <a href="Memoires.html">Mémoires</a>
+      <a href="D15.html">D15</a>
+      <a href="digital.html">Digital.es</a>
+    </nav>
 
 <!-------------------------------------------------------------
-                          POP-UPS         
+                          BODY
 -------------------------------------------------------------->
 
-  <div class="popup-box popup-mobilier" id="popup-mobilier">
-    <a href="#" class="popup-close">✕</a>
+    <div class="promotions">
+      <h2>Mémoires de recherche</h2>
+      <p>En DSAA on fait de la recherche créa Blablabla et pouf découvrez toutes les années</p>
+
+      <div class="annees">
+        <a href="Memoires_2026.html" class="annee">2026</a>
+      </div>
+    </div>
+
   </div>
-
-  <div class="popup-box popup-ludd" id="popup-ludd">
-    <a href="#" class="popup-close">✕</a>
-  </div>
-
-  <div class="popup-box popup-prism" id="popup-prism">
-    <a href="#" class="popup-close">✕</a>
-  </div>
-
-  <div class="popup-box popup-mouche" id="popup-mouche">
-    <a href="#" class="popup-close">✕</a>
-  </div>
-
-<!-------------------------------------------------------------
-                        SCRIPT POP-UPS         
--------------------------------------------------------------->
-<script>
-    const POPUP_IDS = ['popup-mobilier', 'popup-ludd', 'popup-prism', 'popup-mouche'];
-
-    function closeAllPopups() {
-      POPUP_IDS.forEach(id => {
-        document.getElementById(id).classList.remove('is-open');
-      });
-    }
-
-    document.addEventListener('click', function(e) {
-
-      const closeBtn = e.target.closest('.popup-close');
-      if (closeBtn) {
-        e.preventDefault();
-        closeBtn.closest('.popup-box').classList.remove('is-open');
-        return;
-      }
-
-      const popupTrigger = e.target.closest('[data-popup]');
-      if (popupTrigger) {
-        e.preventDefault();
-        const targetId = popupTrigger.dataset.popup;
-        const targetEl = document.getElementById(targetId);
-        if (!targetEl) return;
-
-        const wasOpen = targetEl.classList.contains('is-open');
-        closeAllPopups();
-        if (!wasOpen) {
-          targetEl.classList.add('is-open');
-        }
-        return;
-      }
-
-      const archiveTrigger = e.target.closest('[data-popup-archive]');
-      if (archiveTrigger) {
-        closeAllPopups();
-      }
-
-    });
-</script>
+</body>
+</html>

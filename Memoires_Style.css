@@ -1,0 +1,382 @@
+/* ============================================================
+                            NAV BAR
+============================================================ */
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.menu a {
+  font-family: 'FuturalHeavy';
+  color: #ffffff;
+  font-size: clamp(11px, 2.8vw, 13px);
+}
+
+/* ============================================================
+                            BODY
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ============================================================
+                            FONTS
+============================================================ */
+
+@font-face {
+  font-family: 'FuturalHeavy';
+  src: url('fonts/BBB-Herthey-Futural-95.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturalRegular';
+  src: url('fonts/BBB-Herthey-Futural-40.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturalThin';
+  src: url('fonts/BBB-Herthey-Futural-15.woff') format('woff');
+  font-weight: thin;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Baskervvol';
+  src: url('fonts/BBBBaskervvol-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BaskervvolItalic';
+  src: url('fonts/BBBBaskervvol-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* ============================================================
+                            BODY
+============================================================ */
+
+h2 {
+  font-family: 'FuturalHeavy';
+  color: #ffffff;
+  font-size: clamp(42px, 10vh, 52px);
+}
+
+h3 {
+  font-family: 'BaskervvolItalic'; 
+  color: #ffffff;
+  font-size: clamp(12px, 2vh, 18px);
+}
+
+p {
+  font-family: 'Baskervvol';
+  color: #ffffff;
+  font-size: clamp(12px, 2vh, 18px);
+}
+
+/* ============================================================
+                            GRILLE
+============================================================ */
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  width: 100%;
+}
+
+.grille a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+  text-decoration: none;
+  padding: 4rem;
+  height: 48vh;
+  width: 50vw;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.grille a:nth-child(2n) {
+  border-right: none;
+}
+
+.grille a:nth-child(3),
+.grille a:nth-child(4) {
+  border-bottom: none;
+}
+
+/* ============================================================
+                          PROMOTIONS
+============================================================ */
+
+.promotions {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.promotions p {
+  max-width: 60ch;
+  margin: 1.5rem 0 4rem;
+}
+
+.annees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.annee {
+  font-family: 'FuturalHeavy';
+  color: #ffffff;
+  font-size: clamp(48px, 9vw, 110px);
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.annee:hover {
+  transform: rotate(-8deg);
+}
+
+.annee:nth-child(even):hover {
+  transform: rotate(8deg);
+}
+
+/* ============================================================
+                            POP-UP
+============================================================ */
+ 
+.popup-box {
+  display: none;
+  padding: clamp(0.75rem, 1.4vw, 1rem);
+  overflow-y: auto;
+  position: fixed;
+  z-index: 999;
+  box-sizing: border-box;
+}
+ 
+.popup-box.is-open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+ 
+.popup-mobilier,
+.popup-ludd,
+.popup-prism,
+.popup-mouche {
+  width: 50vw;
+  height: 50vh;
+  top: 25vh;
+  left: 25vw;
+}
+ 
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-family: 'BianzhidaiPearl', sans-serif;
+  text-decoration: none;
+  font-size: clamp(10px, 1.8vw, 16px);
+}
+ 
+.popup-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+ 
+.popup-title {
+  font-size: clamp(20px, 3.5vh, 32px);
+  margin: 0;
+}
+ 
+.popup-text {
+  font-size: clamp(11px, 1vw, 16px);
+  line-height: 1.3;
+  padding: 2vh;
+  flex-shrink: 0;
+}
+ 
+.popup-gallery {
+  display: flex;
+  gap: 1vw;
+  flex: 1;
+  min-height: 0;
+}
+ 
+.popup-image {
+  position: relative;
+  flex: 1 1 0;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  transition: transform 0.4s ease;
+}
+ 
+.popup-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+ 
+.popup-image:hover {
+  transform: scale(1.05) rotate(-2deg);
+  z-index: 2;
+}
+
+.popup-image:nth-child(even):hover {
+  transform: scale(1.05) rotate(2deg);
+}
+ 
+.popup-image-title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1vh;
+  font-size: clamp(10px, 1.4vh, 14px);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+ 
+.popup-image:hover .popup-image-title {
+  opacity: 1;
+}
+
+.popup-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 998;
+}
+
+.popup-backdrop.is-open {
+  display: block;
+}
+ 
+/* ============================================================
+                          MOBILIER
+============================================================ */
+.popup-mobilier {
+  background: #f1d6bf;
+}
+.popup-mobilier .popup-title {
+  font-family: 'FuturalHeavy';
+  color: #412924;
+}
+.popup-mobilier .popup-text {
+  color: #412924;
+}
+.popup-mobilier .popup-close {
+  color: #412924;
+}
+.popup-mobilier .popup-image-title {
+  background: rgba(65, 41, 36, 0.4);
+  color: #ffffff;
+}
+
+/* ============================================================
+                            LUDD
+============================================================ */
+.popup-ludd {
+  background: #1c1c1c;
+}
+.popup-ludd .popup-title {
+  font-family: 'FuturalHeavy';
+  color: #c8ff3c;
+  letter-spacing: 0.04em;
+}
+.popup-ludd .popup-text {
+  color: #e8e8e8;
+}
+.popup-ludd .popup-close {
+  color: #c8ff3c;
+}
+.popup-ludd .popup-image-title {
+  background: rgba(200, 255, 60, 0.4);
+  color: #1c1c1c;
+}
+ 
+/* ============================================================
+                            PRISM
+============================================================ */
+.popup-prism {
+  background: #f4f1ea;
+}
+.popup-prism .popup-title {
+  font-family: 'Baskervvol';
+  color: #1a1a1a;
+}
+.popup-prism .popup-text {
+  color: #1a1a1a;
+}
+.popup-prism .popup-close {
+  color: #1a1a1a;
+}
+.popup-prism .popup-image-title {
+  background: rgba(176, 36, 28, 0.4);
+  color: #ffffff;
+}
+ 
+/* ============================================================
+                            MOUCHE
+============================================================ */
+.popup-mouche {
+  background: #0d0d0d;
+}
+.popup-mouche .popup-title {
+  font-family: 'FuturalHeavy';
+  color: #ffffff;
+  letter-spacing: 0.08em;
+}
+.popup-mouche .popup-text {
+  color: #cfcfcf;
+}
+.popup-mouche .popup-close {
+  color: #e8a33d;
+}
+.popup-mouche .popup-image-title {
+  background: rgba(232, 163, 61, 0.4);
+  color: #0d0d0d;
+}
