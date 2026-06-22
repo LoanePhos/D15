@@ -25,35 +25,35 @@ a {
 
 @font-face {
   font-family: 'FuturalHeavy';
-  src: url('fonts/BBB-Herthey-Futural-95.woff') format('woff');
+  src: url('fonts/bbb-herthey-futural-95.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'FuturalRegular';
-  src: url('fonts/BBB-Herthey-Futural-40.woff') format('woff');
+  src: url('fonts/bbb-herthey-futural-40.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'FuturalThin';
-  src: url('fonts/BBB-Herthey-Futural-15.woff') format('woff');
+  src: url('fonts/bbb-herthey-futural-15.woff') format('woff');
   font-weight: thin;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Baskervvol';
-  src: url('fonts/BBBBaskervvol-Regular.woff') format('woff');
+  src: url('fonts/bbbbaskervvol-regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'BaskervvolItalic';
-  src: url('fonts/BBBBaskervvol-Italic.woff') format('woff');
+  src: url('fonts/bbbbaskervvol-italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }
