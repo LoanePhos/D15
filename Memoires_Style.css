@@ -146,7 +146,7 @@ p {
 .grille a:hover h2,
 .grille a:hover h3,
 .grille a:hover h4,
-.grille a:hover
+.grille a:hover p,
 .grille a:hover strong {
   color: #000000;
 }
