@@ -50,7 +50,7 @@ function loadPage(page, pageElement) {
 
 	img.attr('src', 'pages/' +  page + '.jpg');
 
-	loadRegions(page, pageElement);
+	// loadRegions(page, pageElement); // Disabled to prevent 404s since no regions.json files exist
 
 }
 
