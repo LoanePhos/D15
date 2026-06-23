@@ -65,30 +65,26 @@ a {
 h1 {
   font-family: 'FuturalHeavy';
   color: #ffffff;
-  font-size: clamp(28px, 8vw, 42px);
-  line-height: 1.05;
+  font-size: clamp(42px, 10vh, 52px);
 }
 
 h2 {
-  font-family: 'FuturalHeavy';
+  font-family: 'FuturalRegular'; 
   color: #ffffff;
-  font-size: clamp(18px, 4.5vw, 24px);
-  line-height: 1.15;
+  font-size: clamp(18px, 3vh, 36px);
 }
 
 h3 {
-  font-family: 'FuturalThin';
-  font-weight: normal;
+  font-family: 'BaskervvolItalic'; 
   color: #ffffff;
-  font-size: clamp(10px, 2.2vw, 13px);
-  line-height: 1.9;
+  font-size: clamp(12px, 2vh, 18px);
+  line-height: 160%;
 }
 
 p {
   font-family: 'Baskervvol';
-  color: #d6d6d6;
-  font-size: clamp(11px, 2.6vw, 14px);
-  line-height: 1.45;
+  color: #ffffff;
+  font-size: clamp(12px, 2vh, 18px);
 }
 
 /* ============================================================
@@ -106,7 +102,7 @@ p {
 .menu a {
   font-family: 'FuturalHeavy';
   color: #ffffff;
-  font-size: clamp(11px, 2.8vw, 13px);
+  font-size: clamp(14px, 2.8vw, 18px);
 }
 
 /* ============================================================
@@ -116,7 +112,7 @@ p {
 header {
   display: flex;
   justify-content: center;
-  padding: 30px 20px 50px;
+  padding: 80px 20px 50px;
 }
 
 header img {
@@ -125,12 +121,19 @@ header img {
   height: auto;
 }
 
+.lien-formation {
+  font-family: 'FuturalHeavy';
+  color: #ffffff;
+  font-size: clamp(16px, 1.8vw, 22px);
+  text-decoration: none;
+}
+
 /* ============================================================
-                            COLONNE 1
+                            COLONNES
 ============================================================ */
 
 .colonne1 {
-  padding: 0 20px;
+  padding: 8vh 20px;
   width: 50vw;
 }
 
@@ -155,9 +158,9 @@ header img {
 
 .colonne1 img {
   display: inline-block;
-  width: 50px;
+  width: 8vw;
   height: auto;
-  margin: 16px 12px 16px 0;
+  margin: 1vw 1vw 2vw 0;
   vertical-align: middle;
 }
 
@@ -173,30 +176,87 @@ header img {
   width: auto;
 }
 
-/* ============================================================
-                            COLONNE 2
-============================================================ */
-
 .colonne2 {
   width: 50vw;
-  margin-left: 50%;
-  padding: 60px 20px 40px 0;
+  margin-left: 60%;
+  padding: 60px 40px 40px 0;
 }
 
 .colonne2 h2 {
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 /* ============================================================
-                            FOOTER
+                            CREDITS
 ============================================================ */
 
-.pleine-largeur {
-  padding: 30px 20px;
+.credits {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding: 20px;
+  margin-bottom: 2vh;
 }
 
-.pleine-largeur p {
-  font-family: 'FuturalHeavy';
+details.credits summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: 'FuturalRegular'; 
   color: #ffffff;
-  font-size: clamp(11px, 2.8vw, 13px);
+  font-size: clamp(14px, 2vh, 24px);
+}
+
+details.credits summary::-webkit-details-marker {
+  display: none; 
+}
+
+.credits h3 {
+  font-family: 'FuturalRegular'; 
+  color: #ffffff;
+  font-size: clamp(12px, 1.6vh, 20px);
+  display: inline;
+}
+
+.credits h4 {
+  font-family: 'BaskervvolItalic'; 
+  color: #ffffff;
+  font-size: clamp(10px, 1.2vh, 16px);
+  line-height: 160%;
+  display: inline;
+}
+
+/* ============================================================
+                          RESPONSIVE
+============================================================ */
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-family: 'FuturalHeavy';
+    color: #ffffff;
+    font-size: clamp(32px, 8vh, 40px);
+  }
+
+  .colonne1 {
+    width: 92%;
+    margin: 0 auto;
+    padding: 6vh 0;
+  }
+
+  .colonne1 img {
+    width: 20vw;
+  }
+
+  .colonne2 {
+    width: 92%;
+    margin: 0 auto;
+    padding: 0 0 6vh 0;
+  }
+
+  .credits {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
 }
