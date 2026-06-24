@@ -99,7 +99,7 @@ p {
 
 .liste-excel ul {
   list-style: none;
-  width: 40vw;
+  width: 60vw;
   margin: 0 auto;
   margin-top: 4vh;
   margin-bottom: 4vh;
@@ -107,7 +107,7 @@ p {
 
 .liste-excel li {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
 }
 
@@ -122,12 +122,21 @@ p {
   font-family: 'FuturalRegular';
   color: #ffffff;
   font-size: clamp(11px, 2.4vw, 14px);
+  padding: 18px 12px;
+  text-align: center;
+}
+
+.liste-excel .contact {
+  font-family: 'FuturalRegular';
+  color: #ffffff;
+  font-size: clamp(11px, 2.4vw, 14px);
   padding: 18px 0 18px 12px;
   text-align: right;
 }
 
 .liste-excel .en-tete .nom,
-.liste-excel .en-tete .annee {
+.liste-excel .en-tete .annee,
+.liste-excel .en-tete .contact {
   color: #000000;
   font-size: clamp(16px, 3.4vw, 24px);
   -webkit-text-stroke: 4px #ffffff;
@@ -145,13 +154,15 @@ p {
   }
 
   .liste-excel .nom,
-  .liste-excel .annee {
+  .liste-excel .annee,
+  .liste-excel .contact {
     font-size: clamp(11px, 3.5vw, 14px);
   }
 
   .liste-excel .en-tete .nom,
-  .liste-excel .en-tete .annee {
-    font-size: clamp(16px, 5vw, 22px);
+  .liste-excel .en-tete .annee,
+  .liste-excel .en-tete .contact {
+    font-size: clamp(14px, 4.5vw, 20px);
   }
 
 }

@@ -8,9 +8,6 @@
   <link rel="stylesheet" href="d15_style.css">
 </head>
 
-<!-------------------------------------------------------------
-                          NAV BAR
--------------------------------------------------------------->
 <body>
 
   <div class="container">
@@ -20,27 +17,19 @@
       <a href="digital.html">Digital.es</a>
     </nav>
 
-    <!-------------------------------------------------------------
-                                LISTE
-    -------------------------------------------------------------->
-
     <section class="liste-excel">
       <h2>Alumni du DSAA DCN</h2>
       <p>Le DCN c'est deux ans de formation, en salle D13 puis D14. Et après, qu'est ce que l'on devient ?<br>D15 est une page pour nous retrouver, nous alumni.</p>
       <ul id="liste-eleves">
         <li class="en-tete">
           <span class="nom">Prénom NOM</span>
-          <span class="annee">Diplomé..e en</span>
+          <span class="annee">Diplomé·e en</span>
+          <span class="contact">Contact</span>
         </li>
       </ul>
-      <ul id="liste-eleves"></ul>
     </section>
 
   </div>
-
-  <!-------------------------------------------------------------
-                      SCRIPT LECTURE EXCEL
-  -------------------------------------------------------------->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
@@ -56,7 +45,6 @@
         const feuille = classeur.Sheets[classeur.SheetNames[FEUILLE]];
         const lignes = XLSX.utils.sheet_to_json(feuille, { header: 1 });
         const donnees = lignes.slice(1);
-
         afficherListe(donnees);
       })
       .catch(erreur => {
@@ -70,6 +58,7 @@
       donnees.forEach(ligne => {
         const nom = ligne[0];
         const annee = ligne[1];
+        const contact = ligne[2];
 
         if (!nom) return;
 
@@ -77,6 +66,7 @@
         item.innerHTML = `
           <span class="nom">${nom}</span>
           <span class="annee">${annee ?? ""}</span>
+          <span class="contact">${contact ?? ""}</span>
         `;
         liste.appendChild(item);
       });
