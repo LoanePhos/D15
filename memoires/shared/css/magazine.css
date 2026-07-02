@@ -12,6 +12,8 @@ body{
 	width: 850px;
 	height:600px;
 	margin:auto;
+	transform-origin: center center;
+	transition: transform 0.2s ease;
 }
 
 .magazine-viewport .magazine{

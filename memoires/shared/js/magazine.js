@@ -216,6 +216,9 @@ function disableControls(page) {
 			$('.next-button').show();
 }
 
+// Breakpoint mobile : sous cette largeur, on garde le comportement d'origine
+var MOBILE_BREAKPOINT = 768;
+
 // Set the width and height for the viewport
 
 function resizeViewport() {
@@ -234,12 +237,38 @@ function resizeViewport() {
 
 
 	if ($('.magazine').turn('zoom')==1) {
-		var bound = calculateBound({
-			width: options.width,
-			height: options.height,
-			boundWidth: Math.min(options.width, width),
-			boundHeight: Math.min(options.height, height)
-		});
+
+		var bound;
+
+		if (!$.isTouch) {
+
+			// Desktop : on vise 90% de la hauteur de la fenêtre,
+			// en conservant le ratio d'origine du magazine
+			var targetHeight = height * 0.9;
+			var ratio = options.width / options.height;
+			var targetWidth = targetHeight * ratio;
+
+			// On ne dépasse pas la largeur disponible
+			if (targetWidth > width) {
+				targetWidth = width;
+				targetHeight = targetWidth / ratio;
+			}
+
+			bound = {
+				width: Math.round(targetWidth),
+				height: Math.round(targetHeight)
+			};
+
+		} else {
+
+			// Mobile / tactile : comportement d'origine, jamais plus grand que la taille native
+			bound = calculateBound({
+				width: options.width,
+				height: options.height,
+				boundWidth: Math.min(options.width, width),
+				boundHeight: Math.min(options.height, height)
+			});
+		}
 
 		if (bound.width%2!==0)
 			bound.width-=1;
